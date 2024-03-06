@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trip_advisor/core/constants/image_constants.dart';
 import 'package:trip_advisor/view/account_create_screen/account_create_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -25,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.asset("assets/images/tripadvisor_logo.png",scale: 3.5,),
+        child: Image.asset(ImageConstant.tripAdvisorLogoPng,scale: 3.5,),
       ),
     );
   }
