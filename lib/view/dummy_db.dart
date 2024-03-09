@@ -91,4 +91,40 @@ class DummyDb {
           "https://media-cdn.tripadvisor.com/media/photo-b/2560x500/15/33/f5/de/london.jpg",
     }
   ];
+
+  static const List cardDetailsTopExperience = [
+    {
+      "placeName": "Grand Circle Island and Haleiwa 9 Hour Tour",
+      "pic":
+          "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/09/94/c0/0d.jpg",
+      "circleCount": 4,
+      "reviewsCount": 11234,
+      "spotDest": "Full day Tours"
+    },
+    {
+      "placeName": "Half Day Thai Cooking Course at Farm (Chiang Mai)",
+      "pic":
+          "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0e/a7/29/bd.jpg",
+      "circleCount": 5,
+      "reviewsCount": 16454,
+      "spotDest": "Cooking Classes"
+    },
+    {
+      "placeName": "Ubud Tour - Best of Ubud - All Inclusive",
+      "pic":
+          "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/06/8d/52/be.jpg",
+      "circleCount": 5,
+      "reviewsCount": 8876,
+      "spotDest": "Bus Tours"
+    },
+    {
+      "placeName":
+          "Dubai Red Dunes ATV, Sandsurf, Stargazing & 5* BBQ Al Khayma Camp",
+      "pic":
+          "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0b/24/ea/75.jpg",
+      "circleCount": 4,
+      "reviewsCount": 14422,
+      "spotDest": "Adventure Tours"
+    }
+  ];
 }

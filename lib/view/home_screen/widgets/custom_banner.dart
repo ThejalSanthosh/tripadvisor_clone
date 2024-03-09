@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:trip_advisor/core/constants/color_constants.dart';
 
 import 'package:trip_advisor/view/home_screen/widgets/custom_elevated_button.dart';
@@ -53,11 +54,15 @@ class CustomBanner extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Text(text3,
-                  style: TextStyle(
+              Text(
+                text3,
+                style: GoogleFonts.abrilFatface(
+                  textStyle: TextStyle(
                       color: ColorConstant.primaryWhite,
                       fontSize: 15,
-                      fontWeight: FontWeight.bold)),
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
               SizedBox(
                 height: 20,
               ),

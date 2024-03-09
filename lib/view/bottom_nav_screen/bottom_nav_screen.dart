@@ -1,6 +1,9 @@
+import 'package:bottom_navbar_with_indicator/bottom_navbar_with_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:trip_advisor/core/constants/color_constants.dart';
 import 'package:trip_advisor/view/home_screen/home_screen.dart';
+import 'package:trip_advisor/view/plan_screen/plan_screen.dart';
+import 'package:trip_advisor/view/search_screen/search_screen.dart';
 
 class BottomNavScreen extends StatefulWidget {
   const BottomNavScreen({super.key});
@@ -12,12 +15,8 @@ class BottomNavScreen extends StatefulWidget {
 class _BottomNavScreenState extends State<BottomNavScreen> {
   List screenLists = [
     HomeScreen(),
-    Container(
-      color: Colors.red,
-    ),
-    Container(
-      color: Colors.green,
-    ),
+    SearchScreen(),
+    PlanScreen(),
     Container(
       color: Colors.black,
     ),
@@ -31,26 +30,29 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: screenLists[bottomIndex],
-      bottomNavigationBar: BottomNavigationBar(
-          selectedItemColor: ColorConstant.primaryBlack,
-          useLegacyColorScheme: true,
+      bottomNavigationBar: CustomLineIndicatorBottomNavbar(
+          enableLineIndicator: true,
+          selectedColor: ColorConstant.primaryBlack,
+          lineIndicatorWidth: 4,
+          indicatorType: IndicatorType.top,
+          selectedFontSize: 15,
+          unselectedFontSize: 15,
+          selectedIconSize: 20,
+          unselectedIconSize: 20,
           onTap: (value) {
             bottomIndex = value;
 
             setState(() {});
           },
           currentIndex: bottomIndex,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home_filled), label: "Explore"),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_border), label: "Plan"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.mode_edit_outline_outlined), label: "Review"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_outlined), label: "Account")
+          customBottomBarItems: [
+            CustomBottomBarItems(icon: Icons.home_filled, label: "Explore"),
+            CustomBottomBarItems(icon: Icons.search, label: "Search"),
+            CustomBottomBarItems(icon: Icons.favorite_border, label: "Plan"),
+            CustomBottomBarItems(
+                icon: Icons.mode_edit_outline_outlined, label: "Review"),
+            CustomBottomBarItems(
+                icon: Icons.account_circle_outlined, label: "Account")
           ]),
     );
   }

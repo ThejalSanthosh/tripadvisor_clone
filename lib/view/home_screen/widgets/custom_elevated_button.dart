@@ -7,7 +7,8 @@ class CustomElevatedButton extends StatelessWidget {
       this.buttonColor = ColorConstant.primaryWhite,
       this.textColor = ColorConstant.primaryBlack,
       required this.text,
-      this.onPressed, this.icon});
+      this.onPressed,
+      this.icon});
   final String text;
   final Color textColor;
   final Color buttonColor;
@@ -17,12 +18,15 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
         onPressed: onPressed,
-        icon: Icon(icon),
+        icon: Icon(
+          icon,
+          size: icon == null ? 0 : null,
+        ),
         label: Text(
           text,
           style: TextStyle(
             color: ColorConstant.primaryBlack,
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: FontWeight.normal,
           ),
         ));

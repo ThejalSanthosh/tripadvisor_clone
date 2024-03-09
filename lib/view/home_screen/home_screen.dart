@@ -9,6 +9,7 @@ import 'package:trip_advisor/view/global_widgets/custom_card_place_details.dart'
 import 'package:trip_advisor/view/home_screen/widgets/custom_banner.dart';
 import 'package:trip_advisor/view/home_screen/widgets/custom_elevated_button.dart';
 import 'package:trip_advisor/view/home_screen/widgets/custom_elevated_button_icon.dart';
+import 'package:trip_advisor/view/home_screen/widgets/custom_text.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -118,81 +119,73 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 40,
               ),
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 35, vertical: 25),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: Container(
                       decoration: BoxDecoration(
                           color: ColorConstant.secondaryGreen,
                           borderRadius: BorderRadius.circular(10)),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Discover more in Crystal River",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: ColorConstant.primaryWhite,
-                                fontSize: 34,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CustomElevatedButton(
-                            text: "Keep exploring",
-                            buttonColor: ColorConstant.secondaryGreen,
-                            onPressed: () {},
-                          )
-                        ],
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 35, vertical: 25),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Discover more in Crystal River",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: ColorConstant.primaryWhite,
+                                  fontSize: 34,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            CustomElevatedButton(
+                              text: "Keep exploring",
+                              buttonColor: ColorConstant.secondaryGreen,
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
                       ),
                     ),
-                    SizedBox(
-                      height: 45,
-                    ),
-                    Text(
-                      "You might like these",
-                      style: TextStyle(
-                          color: ColorConstant.primaryBlack,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "More things to do in Crystal River",
-                      style: TextStyle(
-                        color: ColorConstant.primaryBlack,
-                        fontSize: 17,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                      height: 330,
-                      child: ListView.separated(
-                          padding: EdgeInsets.only(right: 18),
-                          scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) => CustomCardDetails(
-                              spotDest: DummyDb.cardDetailsRiver[index]
-                                  ["spotDest"],
-                              placeName: DummyDb.cardDetailsRiver[index]
-                                  ["placeName"],
-                              circleCount: DummyDb.cardDetailsRiver[index]
-                                  ["circleCount"],
-                              reviewsCount: DummyDb.cardDetailsRiver[index]
-                                  ["reviewsCount"],
-                              picUrl: DummyDb.cardDetailsRiver[index]["pic"]),
-                          separatorBuilder: (context, index) => SizedBox(
-                                width: 18,
-                              ),
-                          itemCount: DummyDb.cardDetailsRiver.length),
-                    ),
-                  ],
-                ),
+                  ),
+                  SizedBox(
+                    height: 45,
+                  ),
+                  CustomText(
+                      mainText: "You might like these",
+                      subText: "More things to do in Crystal River"),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    height: 330,
+                    child: ListView.separated(
+                        padding: EdgeInsets.symmetric(horizontal: 18),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) => CustomCardDetails(
+                            spotDest: DummyDb.cardDetailsRiver[index]
+                                ["spotDest"],
+                            placeName: DummyDb.cardDetailsRiver[index]
+                                ["placeName"],
+                            circleCount: DummyDb.cardDetailsRiver[index]
+                                ["circleCount"],
+                            reviewsCount: DummyDb.cardDetailsRiver[index]
+                                ["reviewsCount"],
+                            picUrl: DummyDb.cardDetailsRiver[index]["pic"]),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 18,
+                            ),
+                        itemCount: DummyDb.cardDetailsRiver.length),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 40,
@@ -213,88 +206,64 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 40,
               ),
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Find the perfect sakura viewing spot",
-                      style: TextStyle(
-                          color: ColorConstant.primaryBlack,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                        "These parks and gardens are great for a picnic under the cherry trees",
-                        style: TextStyle(
-                          color: ColorConstant.primaryBlack,
-                          fontSize: 17,
-                        )),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                      height: 330,
-                      child: ListView.separated(
-                          padding: EdgeInsets.only(right: 18),
-                          scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) => CustomCardDetails(
-                              spotDest: DummyDb.cardDetailsSakuraViewing[index]
-                                  ["spotDest"],
-                              placeName: DummyDb.cardDetailsSakuraViewing[index]
-                                  ["placeName"],
-                              circleCount:
-                                  DummyDb.cardDetailsSakuraViewing[index]
-                                      ["circleCount"],
-                              reviewsCount:
-                                  DummyDb.cardDetailsSakuraViewing[index]
-                                      ["reviewsCount"],
-                              picUrl: DummyDb.cardDetailsSakuraViewing[index]
-                                  ["pic"]),
-                          separatorBuilder: (context, index) => SizedBox(
-                                width: 18,
-                              ),
-                          itemCount: DummyDb.cardDetailsSakuraViewing.length),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      "Countdown to spring break",
-                      style: TextStyle(
-                          color: ColorConstant.primaryBlack,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text("All the best places to spend your week off",
-                        style: TextStyle(
-                          color: ColorConstant.primaryBlack,
-                          fontSize: 17,
-                        )),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    SizedBox(
-                      height: 195,
-                      child: ListView.separated(
-                          padding: EdgeInsets.only(right: 18),
-                          scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
-                          itemBuilder: (context, index) =>
-                              CustomCardPlaceDetails(
-                                  image: DummyDb.cardDetailsPlaces[index]
-                                      ["pic"],
-                                  place: DummyDb.cardDetailsPlaces[index]
-                                      ["placeName"]),
-                          separatorBuilder: (context, index) => SizedBox(
-                                width: 18,
-                              ),
-                          itemCount: DummyDb.cardDetailsPlaces.length),
-                    ),
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomText(
+                      mainText: "Find the perfect sakura viewing spot",
+                      subText:
+                          "These parks and gardens are great for a picnic under the cherry trees"),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    height: 330,
+                    child: ListView.separated(
+                        padding: EdgeInsets.symmetric(horizontal: 18),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) => CustomCardDetails(
+                            spotDest: DummyDb.cardDetailsSakuraViewing[index]
+                                ["spotDest"],
+                            placeName: DummyDb.cardDetailsSakuraViewing[index]
+                                ["placeName"],
+                            circleCount: DummyDb.cardDetailsSakuraViewing[index]
+                                ["circleCount"],
+                            reviewsCount:
+                                DummyDb.cardDetailsSakuraViewing[index]
+                                    ["reviewsCount"],
+                            picUrl: DummyDb.cardDetailsSakuraViewing[index]
+                                ["pic"]),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 18,
+                            ),
+                        itemCount: DummyDb.cardDetailsSakuraViewing.length),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  CustomText(
+                      mainText: "Countdown to spring break",
+                      subText: "All the best places to spend your week off"),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    height: 195,
+                    child: ListView.separated(
+                        padding: EdgeInsets.symmetric(horizontal: 18),
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) => CustomCardPlaceDetails(
+                            image: DummyDb.cardDetailsPlaces[index]["pic"],
+                            place: DummyDb.cardDetailsPlaces[index]
+                                ["placeName"]),
+                        separatorBuilder: (context, index) => SizedBox(
+                              width: 18,
+                            ),
+                        itemCount: DummyDb.cardDetailsPlaces.length),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 50,
