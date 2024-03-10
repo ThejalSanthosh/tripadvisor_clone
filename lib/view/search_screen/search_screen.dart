@@ -78,6 +78,10 @@ class _SearchScreenState extends State<SearchScreen> {
                           CustomElevatedButton(
                             text: "Turn on location settings",
                             buttonColor: ColorConstant.secondaryGreen,
+                            havBorder: true,
+                            textColor: ColorConstant.primaryWhite,
+                            verticalPadding: 10,
+                            horizontalPadding: 30,
                             onPressed: () {},
                           )
                         ],

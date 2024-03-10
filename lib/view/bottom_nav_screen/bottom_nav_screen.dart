@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:trip_advisor/core/constants/color_constants.dart';
 import 'package:trip_advisor/view/home_screen/home_screen.dart';
 import 'package:trip_advisor/view/plan_screen/plan_screen.dart';
+import 'package:trip_advisor/view/profile_screen/profile_screen.dart';
+import 'package:trip_advisor/view/review_screen/review_screen.dart';
 import 'package:trip_advisor/view/search_screen/search_screen.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -17,12 +19,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     HomeScreen(),
     SearchScreen(),
     PlanScreen(),
-    Container(
-      color: Colors.black,
-    ),
-    Container(
-      color: Colors.blueGrey,
-    )
+    ReviewScreen(),
+    ProfileScreen()
   ];
 
   int bottomIndex = 0;

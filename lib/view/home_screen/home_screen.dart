@@ -148,6 +148,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             CustomElevatedButton(
                               text: "Keep exploring",
                               buttonColor: ColorConstant.secondaryGreen,
+                              havBorder: true,
+                              textColor: ColorConstant.primaryWhite,
+                              verticalPadding: 10,
+                              horizontalPadding: 30,
                               onPressed: () {},
                             )
                           ],
@@ -308,6 +312,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: Icons.location_on,
                         text: "Add a missing place",
                         buttonColor: ColorConstant.secondaryGreen,
+                        havBorder: true,
+                        textColor: ColorConstant.primaryWhite,
+                        verticalPadding: 10,
+                        horizontalPadding: 30,
                         onPressed: () {},
                       )
                     ],

@@ -21,59 +21,57 @@ class _PlanScreenState extends State<PlanScreen> {
       length: 2,
       child: SafeArea(
         child: Scaffold(
-          body: Expanded(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 35),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Get to know trips",
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25, vertical: 35),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Get to know trips",
+                    style: TextStyle(
+                        color: ColorConstant.primaryBlack,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 26),
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  Text(
+                      textAlign: TextAlign.justify,
                       style: TextStyle(
-                          color: ColorConstant.primaryBlack,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 26),
-                    ),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    Text(
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                            fontSize: 16,
-                            color: ColorConstant.primaryBlack.withOpacity(.8)),
-                        "Now there's two ways to plan your trip use AI or search on your own. Either way,you've got more than 8 million sports to discover,with over one billion traveler reviews and opinions to guide you."),
-                    SizedBox(
-                      height: 25,
-                    ),
-                    TabBar(
-                        //     physics: NeverScrollableScrollPhysics(),
-                        isScrollable: true,
-                        tabAlignment: TabAlignment.start,
-                        dividerHeight: 0,
-                        indicatorColor: ColorConstant.primaryBlack,
-                        labelColor: ColorConstant.primaryBlack,
-                        unselectedLabelColor:
-                            ColorConstant.primaryBlack.withOpacity(.6),
-                        tabs: [
-                          Tab(
-                            text: "Trips",
-                          ),
-                          Tab(
-                            text: "Saves",
-                          )
-                        ]),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    SizedBox(
-                      height: MediaQuery.sizeOf(context).height,
-                      child: TabBarView(
-                          children: [CustomTripTab(), CustomSaveTab()]),
-                    )
-                  ],
-                ),
+                          fontSize: 16,
+                          color: ColorConstant.primaryBlack.withOpacity(.8)),
+                      "Now there's two ways to plan your trip use AI or search on your own. Either way,you've got more than 8 million sports to discover,with over one billion traveler reviews and opinions to guide you."),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  TabBar(
+                      //     physics: NeverScrollableScrollPhysics(),
+                      isScrollable: true,
+                      tabAlignment: TabAlignment.start,
+                      dividerHeight: 0,
+                      indicatorColor: ColorConstant.primaryBlack,
+                      labelColor: ColorConstant.primaryBlack,
+                      unselectedLabelColor:
+                          ColorConstant.primaryBlack.withOpacity(.6),
+                      tabs: [
+                        Tab(
+                          text: "Trips",
+                        ),
+                        Tab(
+                          text: "Saves",
+                        )
+                      ]),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.sizeOf(context).height,
+                    child: TabBarView(
+                        children: [CustomTripTab(), CustomSaveTab()]),
+                  )
+                ],
               ),
             ),
           ),

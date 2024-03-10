@@ -56,12 +56,10 @@ class CustomBanner extends StatelessWidget {
               ),
               Text(
                 text3,
-                style: GoogleFonts.abrilFatface(
-                  textStyle: TextStyle(
-                      color: ColorConstant.primaryWhite,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold),
-                ),
+                style: TextStyle(
+                    color: ColorConstant.primaryWhite,
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold),
               ),
               SizedBox(
                 height: 20,
