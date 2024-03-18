@@ -2,22 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:trip_advisor/core/constants/color_constants.dart';
+import 'package:trip_advisor/model/resturant_result_model.dart';
 
-class CustomCardDetails extends StatelessWidget {
-  const CustomCardDetails(
-      {super.key,
-      required this.picUrl,
-      required this.placeName,
-      required this.circleCount,
-      required this.reviewsCount,
-      required this.spotDest});
+class CustomResturantCardDetails extends StatelessWidget {
+  const CustomResturantCardDetails({
+    super.key,
+    required this.resturantResultModel,
+  });
 
-  final String picUrl;
-  final String placeName;
-  final int circleCount;
-  final int reviewsCount;
-  final String spotDest;
-
+  final ResturantResultModel resturantResultModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,7 +24,8 @@ class CustomCardDetails extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
-                      image: NetworkImage(picUrl), fit: BoxFit.cover)),
+                      image: AssetImage(resturantResultModel.pic),
+                      fit: BoxFit.cover)),
             ),
             Positioned(
                 top: 10,
@@ -45,7 +39,7 @@ class CustomCardDetails extends StatelessWidget {
         Container(
           width: 220,
           child: Text(
-            placeName,
+            resturantResultModel.placeName,
             overflow: TextOverflow.ellipsis,
             maxLines: 3,
             style: TextStyle(
@@ -60,7 +54,7 @@ class CustomCardDetails extends StatelessWidget {
         Row(
           children: [
             ...List.generate(
-                circleCount,
+                resturantResultModel.circleCount,
                 (index) => Padding(
                       padding: const EdgeInsets.all(1),
                       child: CircleAvatar(
@@ -72,7 +66,7 @@ class CustomCardDetails extends StatelessWidget {
               width: 8,
             ),
             Text(
-              reviewsCount.toString(),
+              resturantResultModel.reviewsCount,
               style: TextStyle(
                   color: ColorConstant.primaryBlack.withOpacity(.6),
                   fontSize: 14),
@@ -87,7 +81,7 @@ class CustomCardDetails extends StatelessWidget {
           child: Text(
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            spotDest,
+            resturantResultModel.spotDest,
             style: TextStyle(
                 color: ColorConstant.primaryBlack, fontWeight: FontWeight.w500),
           ),

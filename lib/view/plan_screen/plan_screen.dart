@@ -47,7 +47,6 @@ class _PlanScreenState extends State<PlanScreen> {
                     height: 25,
                   ),
                   TabBar(
-                      //     physics: NeverScrollableScrollPhysics(),
                       isScrollable: true,
                       tabAlignment: TabAlignment.start,
                       dividerHeight: 0,
@@ -67,7 +66,8 @@ class _PlanScreenState extends State<PlanScreen> {
                     height: 40,
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height,
+                    height:
+                        MediaQuery.sizeOf(context).height - kToolbarHeight - 40,
                     child: TabBarView(
                         children: [CustomTripTab(), CustomSaveTab()]),
                   )

@@ -1,3 +1,5 @@
+import 'package:trip_advisor/core/constants/image_constants.dart';
+
 class DummyDb {
   static const List cardDetailsRiver = [
     {
@@ -127,4 +129,6 @@ class DummyDb {
       "spotDest": "Adventure Tours"
     }
   ];
+
+ 
 }

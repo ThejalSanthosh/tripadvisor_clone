@@ -8,22 +8,35 @@ import 'package:trip_advisor/view/review_screen/review_screen.dart';
 import 'package:trip_advisor/view/search_screen/search_screen.dart';
 
 class BottomNavScreen extends StatefulWidget {
-  const BottomNavScreen({super.key});
-
+  BottomNavScreen({super.key, this.childScreen});
+  Widget? childScreen;
   @override
   State<BottomNavScreen> createState() => _BottomNavScreenState();
 }
 
 class _BottomNavScreenState extends State<BottomNavScreen> {
-  List screenLists = [
-    HomeScreen(),
-    SearchScreen(),
-    PlanScreen(),
-    ReviewScreen(),
-    ProfileScreen()
-  ];
-
+  late List screenLists;
+  Widget? childScreen;
   int bottomIndex = 0;
+
+  @override
+  void initState() {
+    childScreen = widget.childScreen;
+    generatePages();
+
+    super.initState();
+  }
+
+  List<dynamic> generatePages() {
+    return screenLists = [
+      childScreen ?? HomeScreen(),
+      SearchScreen(),
+      PlanScreen(),
+      ReviewScreen(),
+      ProfileScreen()
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +51,16 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
           selectedIconSize: 20,
           unselectedIconSize: 20,
           onTap: (value) {
+            if (childScreen != null && bottomIndex == 0 && value == 0) {
+              childScreen = null;
+              generatePages();
+              Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BottomNavScreen(),
+                  ),
+                  (route) => false);
+            }
             bottomIndex = value;
 
             setState(() {});

@@ -61,8 +61,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       text: "Sign in",
                       textColor: ColorConstant.primaryWhite,
                       buttonColor: ColorConstant.primaryBlack,
-                      horizontalPadding: 100,
-                      verticalPadding: 10,
                       onPressed: () {},
                     ),
                   ],

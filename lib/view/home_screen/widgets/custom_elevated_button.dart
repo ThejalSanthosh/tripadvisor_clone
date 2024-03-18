@@ -9,23 +9,17 @@ class CustomElevatedButton extends StatelessWidget {
       required this.text,
       this.onPressed,
       this.icon,
-      this.verticalPadding = 0,
-      this.horizontalPadding = 0,
       this.havBorder = false});
   final String text;
   final Color textColor;
   final Color buttonColor;
   final void Function()? onPressed;
   final IconData? icon;
-  final double verticalPadding;
-  final double horizontalPadding;
   final bool havBorder;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(
-                horizontal: horizontalPadding, vertical: verticalPadding),
             backgroundColor: buttonColor,
             side: havBorder == true
                 ? BorderSide(color: ColorConstant.primaryWhite, width: 2)

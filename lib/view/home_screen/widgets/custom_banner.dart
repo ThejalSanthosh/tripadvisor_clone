@@ -65,6 +65,7 @@ class CustomBanner extends StatelessWidget {
                 height: 20,
               ),
               CustomElevatedButton(
+                // horizontalPadding: 15,
                 text: buttonText,
                 onPressed: onPressed,
               )

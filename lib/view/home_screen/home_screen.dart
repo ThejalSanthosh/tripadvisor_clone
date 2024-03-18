@@ -6,6 +6,7 @@ import 'package:trip_advisor/core/constants/image_constants.dart';
 import 'package:trip_advisor/view/dummy_db.dart';
 import 'package:trip_advisor/view/global_widgets/custom_card_details.dart';
 import 'package:trip_advisor/view/global_widgets/custom_card_place_details.dart';
+import 'package:trip_advisor/view/home_screen/hotel_button_screen/hotel_button_screen.dart';
 import 'package:trip_advisor/view/home_screen/widgets/custom_banner.dart';
 import 'package:trip_advisor/view/home_screen/widgets/custom_elevated_button.dart';
 import 'package:trip_advisor/view/home_screen/widgets/custom_elevated_button_icon.dart';
@@ -40,8 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Icon(
-                            Icons.account_circle_outlined,
+                          CircleAvatar(
+                            backgroundColor: Color.fromARGB(255, 245, 122, 113),
+                            child: Icon(Icons.person),
                           ),
                           SizedBox(
                             width: 24,
@@ -63,7 +65,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           CustomElevatedButtIcon(
-                              onPressed: () {},
+                              onPressed: () {
+                                setState(() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            HotelButtonscreen(screenSelection: "Hotels",),
+                                      ));
+                                });
+                              },
                               label: "Hotels",
                               icons: Icon(
                                 Icons.hotel,
@@ -82,7 +93,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             CustomElevatedButtIcon(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              HotelButtonscreen(screenSelection: "Resturants",),
+                                        ));
+                                  });
+                                },
                                 label: "Resturants",
                                 icons: Icon(Icons.restaurant,
                                     color: ColorConstant.primaryBlack)),
@@ -150,8 +170,6 @@ class _HomeScreenState extends State<HomeScreen> {
                               buttonColor: ColorConstant.secondaryGreen,
                               havBorder: true,
                               textColor: ColorConstant.primaryWhite,
-                              verticalPadding: 10,
-                              horizontalPadding: 30,
                               onPressed: () {},
                             )
                           ],
@@ -169,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 10,
                   ),
                   SizedBox(
-                    height: 330,
+                    height: 350,
                     child: ListView.separated(
                         padding: EdgeInsets.symmetric(horizontal: 18),
                         scrollDirection: Axis.horizontal,
@@ -314,8 +332,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         buttonColor: ColorConstant.secondaryGreen,
                         havBorder: true,
                         textColor: ColorConstant.primaryWhite,
-                        verticalPadding: 10,
-                        horizontalPadding: 30,
+                        // verticalPadding: 10,
+                        // horizontalPadding: 30,
                         onPressed: () {},
                       )
                     ],

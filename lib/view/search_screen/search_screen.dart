@@ -80,8 +80,8 @@ class _SearchScreenState extends State<SearchScreen> {
                             buttonColor: ColorConstant.secondaryGreen,
                             havBorder: true,
                             textColor: ColorConstant.primaryWhite,
-                            verticalPadding: 10,
-                            horizontalPadding: 30,
+                            // verticalPadding: 10,
+                            // horizontalPadding: 30,
                             onPressed: () {},
                           )
                         ],
